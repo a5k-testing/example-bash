@@ -16,7 +16,7 @@ jobs:
         run: bundle update --bundler && bundle install
       - name: Run script
         run: |
-          gen install bashcov simplecov-lcov
+          gem install bashcov simplecov-lcov
           bashcov script.sh
       - name: Upload reports to Codecov
         run: |
