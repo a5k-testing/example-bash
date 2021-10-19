@@ -11,8 +11,8 @@ jobs:
       - name: "Set up Ruby"
         uses: ruby/setup-ruby@v1.83.0
         with:
-          ruby-version: "2.7"
-          bundler-cache: true
+          ruby-version: "3.0"
+          #bundler-cache: true
       #- name: Install Ruby dependencies
         #run: bundle update --bundler && bundle install
       - name: Run script
