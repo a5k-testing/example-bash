@@ -21,4 +21,4 @@ jobs:
       - name: "Upload reports to Codecov"
         uses: codecov/codecov-action@v2
         with:
-          directory: "./coverage"
+          directory: "${{ github.workspace }}/coverage"
