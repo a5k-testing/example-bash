@@ -24,6 +24,7 @@ jobs:
           # Executing code coverage...
           export OPENSOURCE_ONLY='1'
           bashcov './script.sh'
+          bashcov './TEST2.sh'
           echo '-------------------------'
           cat "${{ github.workspace }}/coverage/codecov-result.json"
           echo '-------------------------'
