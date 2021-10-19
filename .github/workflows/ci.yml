@@ -16,15 +16,10 @@ jobs:
         run: bundle update --bundler && bundle install
       - name: Run script
         run: |
-          gem install bashcov simplecov-lcov
+          gem install bashcov
           bashcov script.sh
-      - name: "Upload code coverage to Codacy"
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: "test"
-          coverage-reports: "coverage/codecov-result.json"
-      - name: Upload reports to Codecov
+      - name: "Upload reports to Codecov"
         run: |
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov -f coverage/codecov-result.json -Z
+          #curl -Os https://uploader.codecov.io/latest/linux/codecov
+          #chmod +x codecov
+          #./codecov -f coverage/codecov-result.json -Z
