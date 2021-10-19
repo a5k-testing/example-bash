@@ -18,6 +18,11 @@ jobs:
         run: |
           gem install bashcov simplecov-lcov
           bashcov script.sh
+      - name: "Upload code coverage to Codacy"
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: "test"
+          coverage-reports: "coverage/codecov-result.json"
       - name: Upload reports to Codecov
         run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
