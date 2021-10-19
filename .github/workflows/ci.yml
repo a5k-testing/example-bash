@@ -15,7 +15,6 @@ jobs:
         uses: ruby/setup-ruby@v1.83.0
         with:
           ruby-version: "3.0"
-          #bundler-cache: true
       - name: "Install Bashcov and Codecov"
         run: |
           # Installing Bashcov and Codecov...
@@ -25,8 +24,8 @@ jobs:
           # Executing code coverage...
           export OPENSOURCE_ONLY='1'
           bashcov './script.sh'
+          cat "${{ github.workspace }}/coverage/codecov-result.json"
       - name: "Upload reports to Codecov"
         uses: codecov/codecov-action@v2
-        with:
-          directory: "${{ github.workspace }}/coverage"
-          files: "codecov-result.json"
+        #with:
+          #files: "${{ github.workspace }}/coverage/codecov-result.json"
